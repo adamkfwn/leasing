@@ -22,16 +22,16 @@ class IKEAController():
             conn.close()
 
     @staticmethod
-    def getCustomer():
+    def getCustomer(customerID):
         try:
             listOfCustomer = []
 
             conn = DB.DBConnection.getConnection()
             cur = conn.cursor()
-            cur.execute("SELECT * FROM ikea.customer")
+            cur.execute("SELECT * FROM ikea.customer WHERE customerID = %s", (customerID))
             for row in cur:
-                customerinfo= FPY.Furniture(row[0], row[1],row[2],row[3]) #customer_id, customer_name, customer_address, customer_phonenr
-                listOfCustomer.append(customerinfo)
+                customers = CPY.customer(row[0], row[1],row[2],row[3]) #customer_id, customer_name, customer_address, customer_phonenr
+                listOfCustomer.append(customers)
             return listOfCustomer
         except Exception as e:
             print(e)

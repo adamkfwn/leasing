@@ -19,19 +19,19 @@ class Furniture():
     def getFurnitureName(self):
         return self.__furniture_name
 
-    def GetFurniturePrice(self):
+    def getFurniturePrice(self):
         return self.__furniture_price
 
-    def GetContractType(self):
+    def getContractType(self):
         return self.__contract_type
 
-    def GetMonthlyPrice(self):
+    def getMonthlyPrice(self):
         return self.__monthly_price
 
-    def GetStatus(self):
+    def getStatus(self):
         return self.__Sellable_online
 
-    def GetContract(self):
+    def getContract(self):
         return self.__contract_id
 
 
